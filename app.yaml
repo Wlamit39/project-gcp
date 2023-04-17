@@ -1,0 +1,11 @@
+runtime: python37
+
+env_variables:
+    DATABASE_USER: "root"
+    DATABASE_PASSWORD: "@@fpq0`pu?bZE6G*"
+    DATABASE_NAME: "login-project101"
+    DATABASE_HOST: "34.131.68.22"
+    DATABASE_PORT: '3306'
+
+beta_settings:
+    cloud_sql_instances: 'firstproject-amittr101:asia-south2-a:instance-1'
