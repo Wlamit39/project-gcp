@@ -14,3 +14,9 @@ WRONG_CREDENTIALS = {
     'error_code': 'E003',
     'message': 'The USER details are not correct. Please try again.'
 }
+
+
+WRONG_CREDENTIALS = {
+    'error_code': 'E004',
+    'message': 'The USER already exist. Please try again.'
+}

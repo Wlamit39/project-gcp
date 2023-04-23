@@ -29,6 +29,10 @@ class UserSignupView(APIView):
             password = data.get('password')
             if not password:
                 raise MissingFieldException(field_name="password")
+            if (phone and User.objects.filter(username=username, phone=phone, password=password))\
+                    or (email and User.objects.filter(username=username, email=email, password=password)):
+                error = ec.WRONG_CREDENTIALS
+                return Response(error, status=status.HTTP_400_BAD_REQUEST)
             try:
                 User.objects.create(username=username, password=password, phone=phone, email=email)
                 return Response({'message': 'Signup successful'}, status=status.HTTP_200_OK)#JsonResponse({'message': 'Signup successful'})
